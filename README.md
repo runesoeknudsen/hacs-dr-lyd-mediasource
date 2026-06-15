@@ -75,6 +75,12 @@ Fra Home Assistant 2026.3 leverer integrationen sit eget ikon via mappen [`custo
 
 Bemærk: HACS' egen downloads-/butiksliste henter stadig ikoner fra HACS' CDN og viser derfor (pt.) en tom pladsholder for indbyggede ikoner. Selve integrations-siden i HA viser logoet korrekt.
 
+## Afspillere / kompatibilitet
+
+Episoderne udstilles med content-type `audio/mpeg`, så de også vises og kan vælges for afspillere, der filtrerer mediebrowseren — bl.a. **MPD** (moOde) og **DLNA/UPnP** (DLNA Digital Media Renderer). Ved afspilning følger integrationen DR's redirect server-side og giver afspilleren den direkte CDN-URL, så også UPnP/DLNA-renderere, der ikke selv følger redirects, kan afspille.
+
+Bemærk: DR serverer kun via HTTPS. Meget gamle UPnP-renderere, der kun understøtter HTTP, kan derfor ikke bruges.
+
 ## Begrænsninger
 
 - Bruger DR's interne, udokumenterede API. Endpoints og nøgler kan ændre sig uden varsel.

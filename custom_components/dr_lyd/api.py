@@ -91,6 +91,28 @@ class DRLydClient:
         """Return details for a single series by URN."""
         return await self._get(f"{API_BASE}/series/{urn}")
 
+    async def async_resolve_redirect(self, url: str) -> str:
+        """Resolve DR's assetlinks redirect to the final direct media URL.
+
+        DR's audio asset URL responds with a 302 redirect to the actual file
+        on a CDN. Some UPnP/DLNA renderers do not follow redirects, so we
+        resolve it server-side and hand the player the final URL. Falls back to
+        the original URL on any error (players that follow redirects still work).
+        """
+        headers = {"User-Agent": USER_AGENT}
+        try:
+            async with asyncio.timeout(REQUEST_TIMEOUT):
+                async with self._session.get(
+                    url, headers=headers, allow_redirects=False
+                ) as response:
+                    if response.status in (301, 302, 303, 307, 308):
+                        location = response.headers.get("Location")
+                        if location:
+                            return location
+        except (aiohttp.ClientError, TimeoutError) as err:
+            _LOGGER.debug("Could not resolve redirect for %s: %s", url, err)
+        return url
+
     async def async_list_episodes(self, urn: str) -> list[dict]:
         """Return all episodes for a series, following pagination."""
         items: list[dict] = []

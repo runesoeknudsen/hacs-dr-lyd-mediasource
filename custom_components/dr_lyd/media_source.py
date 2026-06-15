@@ -118,6 +118,9 @@ class DRLydMediaSource(MediaSource):
             url = _decode(rest)
         except (ValueError, UnicodeDecodeError) as err:
             raise Unresolvable(f"Invalid DR LYD item: {identifier}") from err
+        # Resolve DR's redirect to the direct CDN URL so UPnP/DLNA renderers
+        # that don't follow redirects can still play it.
+        url = await self._get_client().async_resolve_redirect(url)
         return PlayMedia(url, MIME_TYPE)
 
     async def async_browse_media(self, item: MediaSourceItem) -> BrowseMediaSource:
@@ -331,7 +334,7 @@ class DRLydMediaSource(MediaSource):
                     domain=DOMAIN,
                     identifier=f"e/{_encode(url)}",
                     media_class=MediaClass.MUSIC,
-                    media_content_type=MediaType.MUSIC,
+                    media_content_type=MIME_TYPE,
                     title=self._episode_title(episode),
                     can_play=True,
                     can_expand=False,
