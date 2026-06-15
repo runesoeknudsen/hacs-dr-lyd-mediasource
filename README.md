@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://www.dr.dk/lyd">
+    <img src="https://www.dr.dk/lyd/_static/drlyd-sharing-image.png" alt="DR LYD" width="320">
+  </a>
+</p>
+
 # DR LYD til Home Assistant
 
 En custom integration der lægger hele DR LYD-podcastkataloget (dr.dk/lyd) ind i Home Assistants mediebrowser som en *media source*. Du kan så browse programmer og afspille afsnit til en hvilken som helst medieafspiller — fx en moOde-baseret Raspberry Pi via MPD-integrationen — præcis som du allerede gør med "media radio" (Radio Browser).
@@ -67,3 +73,9 @@ Hvis afspilning/browsing pludselig fejler med en autorisationsfejl, er DR's nøg
 
 - Bruger DR's interne, udokumenterede API. Endpoints og nøgler kan ændre sig uden varsel.
 - Live-radiokanaler er ikke en del af denne integration (brug Radio Browser til det).
+
+## Licens
+
+Udgivet under [MIT-licensen](LICENSE).
+
+DR, DR LYD og DR-logoet tilhører DR (Danmarks Radio) og er ikke omfattet af denne licens. Logoet linkes blot fra DR's egne servere.
