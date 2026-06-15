@@ -69,6 +69,12 @@ Hvis afspilning/browsing pludselig fejler med en autorisationsfejl, er DR's nøg
 2. Browse til et afsnit i DR LYD og vælg **Afspil på → moOde**.
 3. moOde modtager mp3-URL'en (DR's `assetlinks`-URL redirecter til selve filen, som MPD følger) og begynder afspilning.
 
+## Ikon / logo
+
+Fra Home Assistant 2026.3 leverer integrationen sit eget ikon via mappen [`custom_components/dr_lyd/brand/`](custom_components/dr_lyd/brand) (`icon.png` + `icon@2x.png`). HA serverer det via `/api/brands/integration/dr_lyd/icon.png`, så DR LYD-logoet vises automatisk på **Indstillinger → Enheder & tjenester** og på enhedssiderne — uden noget bidrag til `home-assistant/brands`.
+
+Bemærk: HACS' egen downloads-/butiksliste henter stadig ikoner fra HACS' CDN og viser derfor (pt.) en tom pladsholder for indbyggede ikoner. Selve integrations-siden i HA viser logoet korrekt.
+
 ## Begrænsninger
 
 - Bruger DR's interne, udokumenterede API. Endpoints og nøgler kan ændre sig uden varsel.
@@ -78,4 +84,4 @@ Hvis afspilning/browsing pludselig fejler med en autorisationsfejl, er DR's nøg
 
 Udgivet under [MIT-licensen](LICENSE).
 
-DR, DR LYD og DR-logoet er DR's (Danmarks Radio) varemærke og er ikke omfattet af denne licens. Logoet i denne README linkes fra DR's egne servere, og brands-ikonet (`brands/`) er genereret fra DR's officielt udgivne [logopakke](https://www.dr.dk/om-dr/designmanager/dr-koncern/download-drs-logoer). Det bruges udelukkende til at repræsentere DR LYD-tjenesten.
+DR, DR LYD og DR-logoet er DR's (Danmarks Radio) varemærke og er ikke omfattet af denne licens. Logoet i denne README linkes fra DR's egne servere, og ikonet i `custom_components/dr_lyd/brand/` er genereret fra DR's officielt udgivne [logopakke](https://www.dr.dk/om-dr/designmanager/dr-koncern/download-drs-logoer). Det bruges udelukkende til at repræsentere DR LYD-tjenesten.
