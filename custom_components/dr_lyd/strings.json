@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "DR LYD",
+        "description": "DR LYD bruger et internt API. Standardnøglen virker som regel, men hvis den afvises, kan du hente en ny: åbn dr.dk/lyd, start afspilning, åbn browserens udviklerværktøjer (Network), og kopiér værdien af headeren 'x-apikey'.",
+        "data": {
+          "api_key": "API-nøgle (x-apikey)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "API-nøglen blev afvist af DR. Hent en ny x-apikey fra dr.dk/lyd.",
+      "cannot_connect": "Kunne ikke forbinde til DR LYD."
+    },
+    "abort": {
+      "already_configured": "DR LYD er allerede konfigureret."
+    }
+  }
+}

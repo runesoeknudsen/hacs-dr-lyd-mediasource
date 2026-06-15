@@ -1,0 +1,13 @@
+{
+  "domain": "dr_lyd",
+  "name": "DR LYD",
+  "codeowners": [],
+  "config_flow": true,
+  "dependencies": ["media_source"],
+  "documentation": "https://github.com/runesoeknudsen/hacs-dr-lyd-mediasource",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/runesoeknudsen/hacs-dr-lyd-mediasource/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}

@@ -1,0 +1,20 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "DR LYD",
+        "description": "DR LYD uses an internal API. The default key usually works, but if it is rejected you can get a new one: open dr.dk/lyd, start playback, open your browser developer tools (Network), and copy the value of the 'x-apikey' header.",
+        "data": {
+          "api_key": "API key (x-apikey)"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "The API key was rejected by DR. Get a fresh x-apikey from dr.dk/lyd.",
+      "cannot_connect": "Could not connect to DR LYD."
+    },
+    "abort": {
+      "already_configured": "DR LYD is already configured."
+    }
+  }
+}
