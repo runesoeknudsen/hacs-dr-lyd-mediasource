@@ -78,4 +78,4 @@ Hvis afspilning/browsing pludselig fejler med en autorisationsfejl, er DR's nøg
 
 Udgivet under [MIT-licensen](LICENSE).
 
-DR, DR LYD og DR-logoet tilhører DR (Danmarks Radio) og er ikke omfattet af denne licens. Logoet linkes blot fra DR's egne servere.
+DR, DR LYD og DR-logoet er DR's (Danmarks Radio) varemærke og er ikke omfattet af denne licens. Logoet i denne README linkes fra DR's egne servere, og brands-ikonet (`brands/`) er genereret fra DR's officielt udgivne [logopakke](https://www.dr.dk/om-dr/designmanager/dr-koncern/download-drs-logoer). Det bruges udelukkende til at repræsentere DR LYD-tjenesten.
